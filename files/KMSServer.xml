@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>KMSServer</Name>
+  <Repository>mikolatero/vlmcsd</Repository>
+  <Registry>https://hub.docker.com/r/mikolatero/vlmcsd/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview>&amp;lt;b&amp;gt;vlmcsd&amp;lt;/b&amp;gt; is a replacement for Microsoft's KMS server.&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&#xD;
+&#xD;
+It contains vlmcs, a KMS test client, mainly for debugging purposes, that also can "charge" a genuine KMS server designed to run on an always-on or often-on device, e.g. router, NAS Box, ...intended to help people who lost activation of their legally-owned licenses, e.g. due to a change of hardware (motherboard, CPU, ...)&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&#xD;
+&#xD;
+You can create a DNS SRV entry for  _vlmcs._tcp.yourdomain.com and point it to the NAME of your docker server for port 1688 or whatever port you used instead of having to specify the server as shown below.&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&#xD;
+&#xD;
+&amp;lt;b&amp;gt;Windows 2008/2008R2/2012/2012R2/2016&amp;lt;/b&amp;gt;&amp;lt;br&amp;gt;&#xD;
+&amp;lt;hr/&amp;gt;&#xD;
+slmgr.vbs -upk (unintall current key)&amp;lt;br&amp;gt;&#xD;
+slmgr.vbs -ipk XXXXX-XXXXX-XXXXX-XXXXX-XXXXX (apply GVLK volume license key, see below)&amp;lt;br&amp;gt;&#xD;
+slmgr.vbs -skms DOCKER_IP/HOSTNAME (set KMS server location)&amp;lt;br&amp;gt;&#xD;
+slmgr.vbs -ato (activate)&amp;lt;br&amp;gt;&#xD;
+slmgr.vbs -dlv (display license status)&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&#xD;
+&#xD;
+&amp;lt;b&amp;gt;Office 2016 32-bit&amp;lt;/b&amp;gt;&amp;lt;br&amp;gt;&#xD;
+&amp;lt;hr/&amp;gt;&#xD;
+cd Program Files (x86)Microsoft OfficeOffice16&amp;lt;br&amp;gt;&#xD;
+cscript ospp.vbs /sethst:DOCKER_IP (set KMS server location)&amp;lt;br&amp;gt;&#xD;
+cscript ospp.vbs /inpkey:xxxxx-xxxxx-xxxxx-xxxxx-xxxxx (apply GVLK volume license key, see below)&amp;lt;br&amp;gt;&#xD;
+cscript ospp.vbs /act (activate)&amp;lt;br&amp;gt;&#xD;
+cscript ospp.vbs /dstatusall (display license status)&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&#xD;
+&#xD;
+&amp;lt;b&amp;gt;Office 2016 64-bit&amp;lt;/b&amp;gt;&amp;lt;br&amp;gt;&#xD;
+&amp;lt;hr/&amp;gt;&#xD;
+cd Program FilesMicrosoft OfficeOffice16&amp;lt;br&amp;gt;&#xD;
+cscript ospp.vbs /sethst:DOCKER_IP (set KMS server location)&amp;lt;br&amp;gt;&#xD;
+cscript ospp.vbs /inpkey:xxxxx-xxxxx-xxxxx-xxxxx-xxxxx (apply GVLK volume license key, see below)&amp;lt;br&amp;gt;&#xD;
+cscript ospp.vbs /act (activate)&amp;lt;br&amp;gt;&#xD;
+cscript ospp.vbs /dstatusall (display license status)&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&#xD;
+&#xD;
+&amp;lt;b&amp;gt;GVLK keys&amp;lt;/b&amp;gt;&amp;lt;br&amp;gt;&#xD;
+&amp;lt;hr/&amp;gt;&#xD;
+Windows: &amp;lt;a target="new" href="https://technet.microsoft.com/en-us/library/jj612867(v=ws.11).aspx"&amp;gt;https://technet.microsoft.com/en-us/library/jj612867(v=ws.11).aspx&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt;&#xD;
+Office 2013: &amp;lt;a target="new" href="https://technet.microsoft.com/en-us/library/dn385360.aspx"&amp;gt;https://technet.microsoft.com/en-us/library/dn385360.aspx&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt;&#xD;
+Office 2016: &amp;lt;a target="new" href="https://github.com/SystemRage/py-kms/wiki/Office-GVLK-Keys"&amp;gt;https://github.com/SystemRage/py-kms/wiki/Office-GVLK-Keys&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt;</Overview>
+  <Category>Network:Other</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/WizADSL/Images/master/files/PCLock.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1537813801</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>&amp;lt;b&amp;gt;vlmcsd&amp;lt;/b&amp;gt; is a replacement for Microsoft's KMS server.&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&#xD;
+&#xD;
+It contains vlmcs, a KMS test client, mainly for debugging purposes, that also can "charge" a genuine KMS server designed to run on an always-on or often-on device, e.g. router, NAS Box, ...intended to help people who lost activation of their legally-owned licenses, e.g. due to a change of hardware (motherboard, CPU, ...)&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&#xD;
+&#xD;
+You can create a DNS SRV entry for  _vlmcs._tcp.yourdomain.com and point it to the NAME of your docker server for port 1688 or whatever port you used instead of having to specify the server as shown below.&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&#xD;
+&#xD;
+&amp;lt;b&amp;gt;Windows 2008/2008R2/2012/2012R2/2016&amp;lt;/b&amp;gt;&amp;lt;br&amp;gt;&#xD;
+&amp;lt;hr/&amp;gt;&#xD;
+slmgr.vbs -upk (unintall current key)&amp;lt;br&amp;gt;&#xD;
+slmgr.vbs -ipk XXXXX-XXXXX-XXXXX-XXXXX-XXXXX (apply GVLK volume license key, see below)&amp;lt;br&amp;gt;&#xD;
+slmgr.vbs -skms DOCKER_IP/HOSTNAME (set KMS server location)&amp;lt;br&amp;gt;&#xD;
+slmgr.vbs -ato (activate)&amp;lt;br&amp;gt;&#xD;
+slmgr.vbs -dlv (display license status)&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&#xD;
+&#xD;
+&amp;lt;b&amp;gt;Office 2016 32-bit&amp;lt;/b&amp;gt;&amp;lt;br&amp;gt;&#xD;
+&amp;lt;hr/&amp;gt;&#xD;
+cd Program Files (x86)Microsoft OfficeOffice16&amp;lt;br&amp;gt;&#xD;
+cscript ospp.vbs /sethst:DOCKER_IP (set KMS server location)&amp;lt;br&amp;gt;&#xD;
+cscript ospp.vbs /inpkey:xxxxx-xxxxx-xxxxx-xxxxx-xxxxx (apply GVLK volume license key, see below)&amp;lt;br&amp;gt;&#xD;
+cscript ospp.vbs /act (activate)&amp;lt;br&amp;gt;&#xD;
+cscript ospp.vbs /dstatusall (display license status)&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&#xD;
+&#xD;
+&amp;lt;b&amp;gt;Office 2016 64-bit&amp;lt;/b&amp;gt;&amp;lt;br&amp;gt;&#xD;
+&amp;lt;hr/&amp;gt;&#xD;
+cd Program FilesMicrosoft OfficeOffice16&amp;lt;br&amp;gt;&#xD;
+cscript ospp.vbs /sethst:DOCKER_IP (set KMS server location)&amp;lt;br&amp;gt;&#xD;
+cscript ospp.vbs /inpkey:xxxxx-xxxxx-xxxxx-xxxxx-xxxxx (apply GVLK volume license key, see below)&amp;lt;br&amp;gt;&#xD;
+cscript ospp.vbs /act (activate)&amp;lt;br&amp;gt;&#xD;
+cscript ospp.vbs /dstatusall (display license status)&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&#xD;
+&#xD;
+&amp;lt;b&amp;gt;GVLK keys&amp;lt;/b&amp;gt;&amp;lt;br&amp;gt;&#xD;
+&amp;lt;hr/&amp;gt;&#xD;
+Windows: &amp;lt;a target="new" href="https://technet.microsoft.com/en-us/library/jj612867(v=ws.11).aspx"&amp;gt;https://technet.microsoft.com/en-us/library/jj612867(v=ws.11).aspx&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt;&#xD;
+Office 2013: &amp;lt;a target="new" href="https://technet.microsoft.com/en-us/library/dn385360.aspx"&amp;gt;https://technet.microsoft.com/en-us/library/dn385360.aspx&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt;&#xD;
+Office 2016: &amp;lt;a target="new" href="https://github.com/SystemRage/py-kms/wiki/Office-GVLK-Keys"&amp;gt;https://github.com/SystemRage/py-kms/wiki/Office-GVLK-Keys&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt;</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>1688</HostPort>
+        <ContainerPort>1688</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data/>
+  <Environment/>
+  <Labels/>
+  <Config Name="KMS Port" Target="1688" Default="1688" Mode="tcp" Description="KMS Listen Port (Default 1688)" Type="Port" Display="always" Required="true" Mask="false">1688</Config>
+</Container>
