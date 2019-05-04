@@ -13,9 +13,17 @@
 &#xD;
 It contains vlmcs, a KMS test client, mainly for debugging purposes, that also can "charge" a genuine KMS server designed to run on an always-on or often-on device, e.g. router, NAS Box, ...intended to help people who lost activation of their legally-owned licenses, e.g. due to a change of hardware (motherboard, CPU, ...)&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&#xD;
 &#xD;
-You can create a DNS SRV entry for  _vlmcs._tcp.yourdomain.com and point it to the NAME of your docker server for port 1688 or whatever port you used instead of having to specify the server as shown below.&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&#xD;
+&amp;lt;b&amp;gt;You can create a DNS SRV entry for  _vlmcs._tcp.yourdomain.com and point it to the NAME of your docker server for port 1688 or whatever port you used instead of having to specify the server as shown below.&amp;lt;/b&amp;gt;&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&#xD;
 &#xD;
-&amp;lt;b&amp;gt;Windows 2008/2008R2/2012/2012R2/2016&amp;lt;/b&amp;gt;&amp;lt;br&amp;gt;&#xD;
+&amp;lt;b&amp;gt;Windows Server 2019 (Convert Microsoft Eval to VL)&amp;lt;/b&amp;gt;&amp;lt;br&amp;gt;&#xD;
+&amp;lt;hr/&amp;gt;&#xD;
+DISM /online /Set-Edition:&amp;lt;b&amp;gt;ServerStandard&amp;lt;/b&amp;gt;   /ProductKey:N69G4-B89J2-4G8F4-WWYCC-J464C /AcceptEula&amp;lt;br&amp;gt;&#xD;
+DISM /online /Set-Edition:&amp;lt;b&amp;gt;ServerDatacenter&amp;lt;/b&amp;gt; /ProductKey:WMDGN-G9PQG-XVVXX-R3X43-63DFG /AcceptEula&amp;lt;br&amp;gt;&#xD;
+slmgr.vbs -skms DOCKER_IP/HOSTNAME (set KMS server location)&amp;lt;br&amp;gt;&#xD;
+slmgr.vbs -ato (activate)&amp;lt;br&amp;gt;&#xD;
+slmgr.vbs -dlv (display license status)&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&#xD;
+&#xD;
+&amp;lt;b&amp;gt;Windows Server 2008/2008R2/2012/2012R2/2016&amp;lt;/b&amp;gt;&amp;lt;br&amp;gt;&#xD;
 &amp;lt;hr/&amp;gt;&#xD;
 slmgr.vbs -upk (unintall current key)&amp;lt;br&amp;gt;&#xD;
 slmgr.vbs -ipk XXXXX-XXXXX-XXXXX-XXXXX-XXXXX (apply GVLK volume license key, see below)&amp;lt;br&amp;gt;&#xD;
@@ -41,9 +49,9 @@ cscript ospp.vbs /dstatusall (display license status)&amp;lt;br&amp;gt;&amp;lt;b
 &#xD;
 &amp;lt;b&amp;gt;GVLK keys&amp;lt;/b&amp;gt;&amp;lt;br&amp;gt;&#xD;
 &amp;lt;hr/&amp;gt;&#xD;
-Windows: &amp;lt;a target="new" href="https://technet.microsoft.com/en-us/library/jj612867(v=ws.11).aspx"&amp;gt;https://technet.microsoft.com/en-us/library/jj612867(v=ws.11).aspx&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt;&#xD;
+Windows/WIndows Server: &amp;lt;a target="new" href="https://github.com/SystemRage/py-kms/wiki/Windows-GVLK-Keys"&amp;gt;https://github.com/SystemRage/py-kms/wiki/Windows-GVLK-Keys&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt;&#xD;
 Office 2013: &amp;lt;a target="new" href="https://technet.microsoft.com/en-us/library/dn385360.aspx"&amp;gt;https://technet.microsoft.com/en-us/library/dn385360.aspx&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt;&#xD;
-Office 2016: &amp;lt;a target="new" href="https://github.com/SystemRage/py-kms/wiki/Office-GVLK-Keys"&amp;gt;https://github.com/SystemRage/py-kms/wiki/Office-GVLK-Keys&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt;</Overview>
+Office 2016/2019: &amp;lt;a target="new" href="https://github.com/SystemRage/py-kms/wiki/Office-GVLK-Keys"&amp;gt;https://github.com/SystemRage/py-kms/wiki/Office-GVLK-Keys&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt;</Overview>
   <Category>Network:Other</Category>
   <WebUI/>
   <TemplateURL/>
@@ -51,16 +59,24 @@ Office 2016: &amp;lt;a target="new" href="https://github.com/SystemRage/py-kms/w
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1537813801</DateInstalled>
+  <DateInstalled>1556999833</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Description>&amp;lt;b&amp;gt;vlmcsd&amp;lt;/b&amp;gt; is a replacement for Microsoft's KMS server.&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&#xD;
 &#xD;
 It contains vlmcs, a KMS test client, mainly for debugging purposes, that also can "charge" a genuine KMS server designed to run on an always-on or often-on device, e.g. router, NAS Box, ...intended to help people who lost activation of their legally-owned licenses, e.g. due to a change of hardware (motherboard, CPU, ...)&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&#xD;
 &#xD;
-You can create a DNS SRV entry for  _vlmcs._tcp.yourdomain.com and point it to the NAME of your docker server for port 1688 or whatever port you used instead of having to specify the server as shown below.&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&#xD;
+&amp;lt;b&amp;gt;You can create a DNS SRV entry for  _vlmcs._tcp.yourdomain.com and point it to the NAME of your docker server for port 1688 or whatever port you used instead of having to specify the server as shown below.&amp;lt;/b&amp;gt;&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&#xD;
 &#xD;
-&amp;lt;b&amp;gt;Windows 2008/2008R2/2012/2012R2/2016&amp;lt;/b&amp;gt;&amp;lt;br&amp;gt;&#xD;
+&amp;lt;b&amp;gt;Windows Server 2019 (Convert Microsoft Eval to VL)&amp;lt;/b&amp;gt;&amp;lt;br&amp;gt;&#xD;
+&amp;lt;hr/&amp;gt;&#xD;
+DISM /online /Set-Edition:&amp;lt;b&amp;gt;ServerStandard&amp;lt;/b&amp;gt;   /ProductKey:N69G4-B89J2-4G8F4-WWYCC-J464C /AcceptEula&amp;lt;br&amp;gt;&#xD;
+DISM /online /Set-Edition:&amp;lt;b&amp;gt;ServerDatacenter&amp;lt;/b&amp;gt; /ProductKey:WMDGN-G9PQG-XVVXX-R3X43-63DFG /AcceptEula&amp;lt;br&amp;gt;&#xD;
+slmgr.vbs -skms DOCKER_IP/HOSTNAME (set KMS server location)&amp;lt;br&amp;gt;&#xD;
+slmgr.vbs -ato (activate)&amp;lt;br&amp;gt;&#xD;
+slmgr.vbs -dlv (display license status)&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;&#xD;
+&#xD;
+&amp;lt;b&amp;gt;Windows Server 2008/2008R2/2012/2012R2/2016&amp;lt;/b&amp;gt;&amp;lt;br&amp;gt;&#xD;
 &amp;lt;hr/&amp;gt;&#xD;
 slmgr.vbs -upk (unintall current key)&amp;lt;br&amp;gt;&#xD;
 slmgr.vbs -ipk XXXXX-XXXXX-XXXXX-XXXXX-XXXXX (apply GVLK volume license key, see below)&amp;lt;br&amp;gt;&#xD;
@@ -86,9 +102,9 @@ cscript ospp.vbs /dstatusall (display license status)&amp;lt;br&amp;gt;&amp;lt;b
 &#xD;
 &amp;lt;b&amp;gt;GVLK keys&amp;lt;/b&amp;gt;&amp;lt;br&amp;gt;&#xD;
 &amp;lt;hr/&amp;gt;&#xD;
-Windows: &amp;lt;a target="new" href="https://technet.microsoft.com/en-us/library/jj612867(v=ws.11).aspx"&amp;gt;https://technet.microsoft.com/en-us/library/jj612867(v=ws.11).aspx&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt;&#xD;
+Windows/WIndows Server: &amp;lt;a target="new" href="https://github.com/SystemRage/py-kms/wiki/Windows-GVLK-Keys"&amp;gt;https://github.com/SystemRage/py-kms/wiki/Windows-GVLK-Keys&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt;&#xD;
 Office 2013: &amp;lt;a target="new" href="https://technet.microsoft.com/en-us/library/dn385360.aspx"&amp;gt;https://technet.microsoft.com/en-us/library/dn385360.aspx&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt;&#xD;
-Office 2016: &amp;lt;a target="new" href="https://github.com/SystemRage/py-kms/wiki/Office-GVLK-Keys"&amp;gt;https://github.com/SystemRage/py-kms/wiki/Office-GVLK-Keys&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt;</Description>
+Office 2016/2019: &amp;lt;a target="new" href="https://github.com/SystemRage/py-kms/wiki/Office-GVLK-Keys"&amp;gt;https://github.com/SystemRage/py-kms/wiki/Office-GVLK-Keys&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt;</Description>
   <Networking>
     <Mode>bridge</Mode>
     <Publish>
